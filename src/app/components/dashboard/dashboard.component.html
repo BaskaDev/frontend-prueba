@@ -1,0 +1,42 @@
+
+
+<mat-card class="parent">
+   
+    <mat-card class="div1"> 
+        
+        <mat-toolbar style="height: 98vh;">
+            <mat-toolbar-row>
+              <span class="title">Tra<span style="color: #0892fd;">ckify</span></span>
+              <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+        
+            </mat-toolbar-row>
+          
+            @if(companyState){
+                <mat-toolbar-row>
+                    <button mat-button><span class="example-spacer" (click)="toggleCompanyPanel1()">Usuarios</span></button>
+               </mat-toolbar-row>
+            }@else {
+                <mat-toolbar-row>
+                    <button mat-button><span class="example-spacer" (click)="toggleCompanyPanel()">Empresas</span></button>
+               </mat-toolbar-row>
+            }
+            
+          
+          
+           <mat-toolbar-row>
+            <button mat-button><span class="example-spacer" (click)="exit()">Salir</span></button>
+       </mat-toolbar-row>
+
+     
+       <img src="assets/join.svg" width="300px" height="auto">
+          </mat-toolbar>
+    </mat-card>
+    <mat-card class="div2">
+        @if(companyState){
+            <app-list-company></app-list-company>
+        }@else{
+          <app-project-list></app-project-list>  
+        }
+        
+     </mat-card>
+    <mat-card>

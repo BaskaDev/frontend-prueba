@@ -1,0 +1,70 @@
+<div *ngIf="loading">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+
+  
+
+
+
+  <div *ngIf="!loading" class="company-cards">
+    <mat-card *ngFor="let company of companies" class="company-card">
+      <mat-card-header>
+     
+        <mat-card-title>{{ company.name_company }}</mat-card-title>
+        <br>
+        <mat-card-subtitle>{{ company.nit_compant }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+      
+
+        <div><strong>Dirección:</strong> {{ company.address_company }}</div>
+        <div><strong>Correo Electrónico:</strong> {{ company.email_company }}</div>
+        <div><strong>Teléfono:</strong> {{ company.phone_company }}</div>
+    
+      </mat-card-content>
+      @if(company.id_company == id){
+        <button mat-raised-button (click)="viewProjects()"> Ver Proyectos</button>
+
+        
+    }
+    </mat-card>
+
+    @if(showProjects){
+      <div class="projects">
+        <app-company-projects></app-company-projects>
+      </div>
+      
+    }
+
+  </div>
+  
+  <mat-table *ngIf="!loading && !companies.length" class="company-table">
+    <ng-container matColumnDef="name_company">
+      <th mat-header-cell *matHeaderCellDef> Nombre de la Empresa </th>
+      <td mat-cell *matCellDef="let company"> {{ company.name_company }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="nit_compant">
+      <th mat-header-cell *matHeaderCellDef> NIT </th>
+      <td mat-cell *matCellDef="let company"> {{ company.nit_compant }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="address_company">
+      <th mat-header-cell *matHeaderCellDef> Dirección </th>
+      <td mat-cell *matCellDef="let company"> {{ company.address_company }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="email_company">
+      <th mat-header-cell *matHeaderCellDef> Correo Electrónico </th>
+      <td mat-cell *matCellDef="let company"> {{ company.email_company }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="phone_company">
+      <th mat-header-cell *matHeaderCellDef> Teléfono </th>
+      <td mat-cell *matCellDef="let company"> {{ company.phone_company }} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </mat-table>
+  

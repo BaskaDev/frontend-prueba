@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Lista de Usuarios</h1>
+
+  <!-- Spinner de carga -->
+  <mat-spinner *ngIf="loading" class="loading-spinner"></mat-spinner>
+
+  <!-- Tabla de usuarios -->
+  <table mat-table [dataSource]="users" *ngIf="!loading">
+
+    <!-- Columna para el nombre del usuario -->
+    <ng-container matColumnDef="username_user">
+      <th mat-header-cell *matHeaderCellDef> Nombre del Usuario </th>
+      <td mat-cell *matCellDef="let user"> {{ user.username_user }} </td>
+    </ng-container>
+
+    <!-- Fila de encabezado -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+    <!-- Fila de datos -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!-- Mensaje cuando no hay usuarios -->
+  <p *ngIf="!loading && users.length === 0">No hay usuarios disponibles.</p>
+</div>

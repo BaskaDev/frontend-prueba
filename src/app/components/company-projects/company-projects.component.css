@@ -1,0 +1,115 @@
+.input{
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 80%;
+    outline: none;
+}
+.container{
+  height: 20%;
+}
+.form-user{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    transition: transform 0.2s;  
+  position: absolute;
+  margin-left: 400px;
+  width: 100%;
+  display: inline;
+  
+}
+.container1 {
+  position: absolute;
+  display: inline;
+  left: 400px;
+  top: -30px;  /* Puedes ajustar esto según sea necesario */
+}
+
+.user-stories-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Tamaño adaptable de las tarjetas */
+  gap: 20px;
+  padding: 20px;
+}
+
+.user-story-card {
+  background-color: #f5f5f5; /* Fondo de la tarjeta */
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.story-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+button {
+  margin-top: 12px;
+  align-self: center;
+  background-color: #0892fd;
+  
+}
+
+button:hover{
+  border-color:#0892fd; 
+  border-style: solid;
+  border-width: 1px;
+  background-color: #0892fd;
+  color: #fff;
+  
+}
+
+
+
+.container2 {
+  position: absolute;
+  display: inline;
+  left: 800px;
+  top: -30px;  /* Puedes ajustar esto según sea necesario */
+}
+
+.tickets-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta el tamaño de los cuadraditos */
+  gap: 20px;
+}
+
+.ticket {
+  background-color: #f5f5f5; /* Fondo del ticket */
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ticket-title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.ticket-description {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 8px;
+}
+
+.ticket-status {
+  margin-top: 12px;
+  font-size: 0.8em;
+  color: #00796b; 
+}
