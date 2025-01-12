@@ -11,5 +11,7 @@ export const routes: Routes = [
     {
         path: 'dashboard/:data', // Elimina el prefijo '/'
         component: DashboardComponent
+    },{
+        path: '**', redirectTo: '' 
     }
 ];
